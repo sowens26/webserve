@@ -21,7 +21,9 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
     res.render('maintenance.hbs',{
         pageTitle: 'MAINTAINENANCE'
-    })
+    });
+    next();
+
 });
 
 
@@ -59,4 +61,11 @@ app.get('/failure', (req, res) => {
     })
 });
 
+//projectspage
+app.get('/projects', (req,res)=>{
+    res.render('projects.hbs',{
+        pageTitle: 'Projects',
+        msg: 'this is the projects page'
+    })
+})
 app.listen(PORT);
