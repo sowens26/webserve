@@ -18,13 +18,13 @@ app.use((req, res, next) => {
     next();
     
 });
-app.use((req, res, next) => {
-    res.render('maintenance.hbs',{
-        pageTitle: 'MAINTAINENANCE'
-    });
-    next();
 
-});
+// app.use((req, res, next) => {
+//     res.render('maintenance.hbs',{
+//         pageTitle: 'MAINTAINENANCE'
+//     });
+
+// });
 
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -38,7 +38,7 @@ hbs.registerHelper('scream', (x)=>{ return x.toUpperCase(); });
 app.get('/', (req, res) => 
     {      
         res.render('home.hbs',{
-            pageTitle: 'HOME',
+            pageTitle: 'Home',
             msg: 'welcome'
         });
 
